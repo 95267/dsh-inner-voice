@@ -1,0 +1,22 @@
+# dsh-inner-voice
+# A: archive the reasoning excerpt, one day per file
+# B: rewrite it into a short line (needs an API key, optional)
+# C: settings page reading /dsh-inner-voice-api
+- insert:
+    - id: dsh-inner-voice
+      name: dsh-inner-voice
+      config:
+        enabled: true
+        # Skip turns whose reasoning is shorter than this (chars).
+        minChars: 160
+        # Max chars kept of the raw excerpt.
+        maxChars: 400
+        # Label shown before the rewritten line (and written into the log).
+        label: inner voice
+        # Generate the short line. Without an API key this is skipped anyway.
+        rewrite: true
+        # Any OpenAI-compatible chat endpoint's model id.
+        model: deepseek-chat
+        # Leave empty to read DEEPSEEK_API_KEY from the environment.
+        apiKey: ''
+        # rewritePrompt: ''   # override the built-in instruction to fit another persona
